@@ -1,3 +1,3 @@
 # TrafficLights
 
-A trivial game built in iOS 10 and Swift 8
+A trivial game built in iOS 10 and Swift 3
