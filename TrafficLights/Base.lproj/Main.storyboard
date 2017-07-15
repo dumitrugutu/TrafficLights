@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,29 +26,45 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Road" translatesAutoresizingMaskIntoConstraints="NO" id="cVl-Kl-4Vy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TrafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="5GA-CY-1Wr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="5GA-CY-1Wr">
                                 <rect key="frame" x="16" y="0.0" width="343" height="362"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5GA-CY-1Wr" secondAttribute="height" multiplier="343:362" id="DMV-Gb-20r"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-Md-hsW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-Md-hsW">
                                 <rect key="frame" x="16" y="370" width="343" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="49"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C14-OF-Zhr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C14-OF-Zhr">
                                 <rect key="frame" x="94" y="472" width="187" height="187"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop" backgroundImage="redButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C14-OF-Zhr" secondAttribute="height" multiplier="1:1" id="LSM-K2-yak"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Start" backgroundImage="redButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="C14-OF-Zhr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="78" id="0sY-J6-8ej"/>
                             <constraint firstItem="cVl-Kl-4Vy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1k1-TR-adw"/>
                             <constraint firstItem="cVl-Kl-4Vy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BV1-Hz-OOs"/>
+                            <constraint firstItem="5GA-CY-1Wr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NdV-02-gja"/>
+                            <constraint firstItem="6Q2-Md-hsW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PS8-fX-ghv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cVl-Kl-4Vy" secondAttribute="bottom" id="UOt-I3-CsJ"/>
+                            <constraint firstItem="6Q2-Md-hsW" firstAttribute="top" secondItem="5GA-CY-1Wr" secondAttribute="bottom" constant="8" id="Ybh-lB-8Ja"/>
                             <constraint firstAttribute="trailing" secondItem="cVl-Kl-4Vy" secondAttribute="trailing" id="dPu-dV-SeX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="C14-OF-Zhr" secondAttribute="bottom" constant="8" id="k3M-oO-T7d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C14-OF-Zhr" secondAttribute="trailing" constant="78" id="kpP-Hc-WDb"/>
+                            <constraint firstItem="5GA-CY-1Wr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="mj1-K3-8Wd"/>
+                            <constraint firstItem="C14-OF-Zhr" firstAttribute="top" secondItem="6Q2-Md-hsW" secondAttribute="bottom" constant="8" id="tVe-9U-8z2"/>
+                            <constraint firstItem="6Q2-Md-hsW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vAO-JQ-1vt"/>
+                            <constraint firstItem="5GA-CY-1Wr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="xnu-Qo-XAw"/>
                         </constraints>
                     </view>
                 </viewController>
